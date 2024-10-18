@@ -4,7 +4,6 @@ export interface GameObject {
     y: number;
     width: number;
     height: number;
-    color?: string;
     image?: string;
     update(delta: number): void;
     draw(ctx: CanvasRenderingContext2D): void;
