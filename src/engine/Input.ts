@@ -1,12 +1,19 @@
 export class InputManager {
-    private keys: Set<string> = new Set();
+    private keys: { [key: string]: boolean } = {}; // Changed to an object to track key states
 
     constructor() {
-        globalThis.addEventListener('keydown', (e) => this.keys.add(e.key));
-        globalThis.addEventListener('keyup', (e) => this.keys.delete(e.key));
+      // Listen for keydown and keyup events
+      globalThis.addEventListener('keydown', (e) => {
+        this.keys[e.key] = true; // Set the key as "pressed"
+      });
+  
+      globalThis.addEventListener('keyup', (e) => {
+        this.keys[e.key] = false; // Set the key as "released"
+      });
     }
-
+  
+    // Check if a key is currently being held down
     isKeyPressed(key: string): boolean {
-        return this.keys.has(key);
+      return this.keys[key] === true; // Return true if the key is pressed
     }
 }

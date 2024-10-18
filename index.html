@@ -5,10 +5,17 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Platform Game</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrollbars */
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <canvas id="gameWindow" oncontextmenu="return!1" style="z-index: 1; position: absolute; pointer-events: none;"></canvas>
-    <div id="app"></div>
+    <canvas id="gameWindow"></canvas>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -7,3 +7,10 @@ export function autoID() {
     }
     return result;
 }
+
+export enum Colors {
+    BLUE="blue",
+    RED="red",
+    BLACK="black",
+    GREEN="green"
+}
